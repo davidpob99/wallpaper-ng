@@ -11,7 +11,7 @@ categories = ["api-bindings"]
 license = "Apache-2.0"
 
 [dependencies]
-dirs = { version = "1", optional = true }
+dirs = { version = "6", optional = true }
 thiserror = "1"
 reqwest = { version = "0.11", optional = true, default-features = false, features = ["blocking", "rustls-tls"] }
 
