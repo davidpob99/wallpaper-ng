@@ -60,3 +60,28 @@ fn main() {
     println!("{:?}", wallpaper::get());
 }
 ```
+
+## Contributing
+
+This project follows the [Gitflow](https://nvie.com/posts/a-successful-git-branching-model/) branching model:
+
+| Branch                | Purpose                                                   | Branches off | Merges into          |
+|-----------------------|-----------------------------------------------------------|--------------|----------------------|
+| `master`              | Production-ready code. Every commit is a tagged release   | —            | —                    |
+| `develop`             | Integration branch for the next release                   | `master`     | —                    |
+| `feature/<issue>-<short-description>` | New features                              | `develop`    | `develop`            |
+| `release/<version>`   | Release preparation (version bump, final fixes)           | `develop`    | `master` and `develop` |
+| `hotfix/<issue>-<short-description>`  | Urgent fixes for production               | `master`     | `master` and `develop` |
+
+If you’d like to contribute:
+
+1. Fork this repository
+2. Create an issue describing the feature or bug
+3. Create a branch that corresponds to the issue, following the naming conventions above:
+   - Features: branch off `develop` as `feature/[issue number]-[short description]` (e.g. `feature/37-automatise-upload-of-versions`)
+   - Hotfixes: branch off `master` as `hotfix/[issue number]-[short description]`
+4. Commit your changes
+5. Push the branch
+6. Open a Pull Request against `develop` (features) or `master` (hotfixes). Please ensure that an issue exists before submitting your contribution as a pull request
+
+> `master` and `develop` are never committed to directly. `release/*` branches are created by the maintainers.
