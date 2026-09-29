@@ -1,4 +1,4 @@
-# wallpaper
+# wallpaper-ng
 
 This Rust library gets and sets the desktop wallpaper/background.
 
@@ -25,39 +25,35 @@ This project is a maintained fork of the [wallpaper](https://github.com/reujab/w
 ## Examples
 
 ```rust
-use wallpaper;
-
 fn main() {
     // Returns the wallpaper of the current desktop.
-    println!("{:?}", wallpaper::get());
+    println!("{:?}", wallpaper_ng::get());
     // Sets the wallpaper for the current desktop from a file path.
-    wallpaper::set_from_path("/usr/share/backgrounds/gnome/adwaita-day.png").unwrap();
+    wallpaper_ng::set_from_path("/usr/share/backgrounds/gnome/adwaita-day.png").unwrap();
     // Sets the wallpaper style.
-    wallpaper::set_mode(wallpaper::Mode::Crop).unwrap();
+    wallpaper_ng::set_mode(wallpaper_ng::Mode::Crop).unwrap();
     // Returns the wallpaper of the current desktop.
-    println!("{:?}", wallpaper::get());
+    println!("{:?}", wallpaper_ng::get());
 }
 ```
 
-If you want to set an image as background via an URL, make sure you activated the `from_url` feature of the wallpaper crate on Cargo.toml:
+If you want to set an image as background via an URL, make sure you activated the `from_url` feature of the wallpaper-ng crate on Cargo.toml:
 
 ```toml
 [dependencies]
-wallpaper = { version = "3", features = ["from_url"] }
+wallpaper-ng = { version = "0.1", features = ["from_url"] }
 ```
 
 Then, on your main.rs:
 
 ```rust
-use wallpaper;
-
 fn main() {
     // Returns the wallpaper of the current desktop.
-    println!("{:?}", wallpaper::get());
+    println!("{:?}", wallpaper_ng::get());
     // Sets the wallpaper for the current desktop from a URL.
-    wallpaper::set_from_url("https://source.unsplash.com/random").unwrap();
+    wallpaper_ng::set_from_url("https://source.unsplash.com/random").unwrap();
     // Returns the wallpaper of the current desktop.
-    println!("{:?}", wallpaper::get());
+    println!("{:?}", wallpaper_ng::get());
 }
 ```
 
